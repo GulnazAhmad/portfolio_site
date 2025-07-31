@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gulnaz Ahmad - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #141414;
+        color: #ffffff;
+      }
+      .font-bebas {
+        font-family: "Bebas Neue", cursive;
+      }
+      .section {
+        scroll-margin-top: 64px;
+      }
+      .netflix-red {
+        background-color: #e50914;
+      }
+      .netflix-red-text {
+        color: #e50914;
+      }
+      .project-card {
+        flex: 0 0 auto;
+        width: 300px;
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card:hover {
+        transform: scale(1.05);
+        z-index: 10;
+      }
+      .project-card .project-img {
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover .project-img {
+        transform: scale(1.1);
+      }
+      .projects-container {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+      }
+      .projects-container::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+      }
+      .img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0.1)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .img-overlay-text {
+        font-family: "Bebas Neue", cursive;
+        font-size: 1.75rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#141414] text-white">
+    <!-- Header -->
+    <header
+      class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="#" class="text-3xl font-bebas text-red-600 tracking-wider"
+          >GULNAZ</a
+        >
+        <nav class="hidden md:flex space-x-8">
+          <a
+            href="#about"
+            class="text-gray-300 hover:text-white transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-300 hover:text-white transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-300 hover:text-white transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-300 hover:text-white transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-300 hover:text-white transition-colors"
+            >Contact</a
+          >
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-black">
+        <a href="#about" class="block py-2 px-6 text-gray-300 hover:bg-gray-900"
+          >About</a
+        >
+        <a
+          href="#skills"
+          class="block py-2 px-6 text-gray-300 hover:bg-gray-900"
+          >Skills</a
+        >
+        <a
+          href="#experience"
+          class="block py-2 px-6 text-gray-300 hover:bg-gray-900"
+          >Experience</a
+        >
+        <a
+          href="#projects"
+          class="block py-2 px-6 text-gray-300 hover:bg-gray-900"
+          >Projects</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 px-6 text-gray-300 hover:bg-gray-900"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 pt-24">
+      <!-- Hero Section -->
+      <section id="hero" class="min-h-[calc(100vh-96px)] flex items-center">
+        <div class="max-w-4xl">
+          <h1
+            class="text-5xl md:text-7xl font-bebas tracking-wide text-white leading-tight"
+          >
+            Gulnaz Ahmad
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mt-2">
+            Full-Stack Developer & Cloud Enthusiast
+          </h2>
+          <p class="mt-6 text-lg text-gray-400 max-w-2xl">
+            A final-year Computer Science undergraduate with hands-on exposure
+            to backend development, Azure cloud fundamentals, and full-stack
+            project development. Eager to build scalable and maintainable
+            software solutions.
+          </p>
+          <div class="mt-8 flex space-x-4">
+            <a
+              href="mailto:gulnazahmad86@gmail.com"
+              class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-md transition-transform transform hover:scale-105 inline-flex items-center space-x-2"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              <span>Get in Touch</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gulnaz-ahmad"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors"
+            >
+              <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </a>
+            <a
+              href="https://github.com/GulnazAhmad"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white p-3 rounded-full bg-neutral-800 hover:bg-neutral-700 transition-colors"
+            >
+              <i data-lucide="github" class="w-6 h-6"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 section">
+        <h2 class="text-4xl font-bebas tracking-wider text-white mb-12">
+          Who is this?
+        </h2>
+        <div class="grid md:grid-cols-5 gap-10 items-center">
+          <div class="md:col-span-2">
+            <div class="md:col-span-2 flex justify-center">
+              <img
+                src="./image/GULNAZ AHMAD.jpeg"
+                alt="Gulnaz Ahmad"
+                class="rounded-full border-4 border-red-500 shadow-2xl transform hover:scale-105 transition duration-500 ease-in-out w-64 h-64 object-cover"
+              />
+            </div>
+          </div>
+          <div class="md:col-span-3">
+            <p class="text-lg text-gray-300 mb-4">
+              I am a passionate and driven final-year Computer Science student
+              at Silicon University. My primary interests lie in backend
+              development, where I enjoy building robust REST APIs and writing
+              clean, efficient logic.
+            </p>
+            <p class="text-lg text-gray-300 mb-4">
+              I have hands-on experience with Microsoft Azure, deploying
+              applications and managing services like virtual networks, web
+              apps, and storage. My journey through various internships has
+              provided me with a solid foundation in full-stack development,
+              especially with the MERN stack.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 section">
+        <h2 class="text-4xl font-bebas tracking-wider text-white mb-8">
+          My Projects
+        </h2>
+        <div class="flex overflow-x-auto space-x-6 pb-8 projects-container">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-neutral-800 rounded-lg shadow-lg flex flex-col"
+          >
+            <div class="h-40 relative">
+              <img
+                src="https://i.pinimg.com/736x/c6/f6/32/c6f6326eaf98a219d264b4be08926cc7.jpg"
+                alt="Blog Website Project"
+                class="project-img w-full h-full object-cover"
+              />
+              <div class="img-overlay">
+                <span class="img-overlay-text">Blog Platform</span>
+              </div>
+            </div>
+            <div class="p-4 flex-grow flex flex-col">
+              <h3 class="text-lg font-bold text-white">
+                Blog Website with AWS & CI/CD
+              </h3>
+              <p class="text-gray-400 text-sm mt-2 flex-grow">
+                A dynamic blog platform with a full CI/CD pipeline using Docker,
+                GitHub Actions, and AWS EC2.
+              </p>
+              <a
+                href="https://github.com/GulnazAhmad/FullStack-Blog-Website"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-red-500 hover:text-red-400 font-semibold inline-flex items-center mt-4"
+                >View Project
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-neutral-800 rounded-lg shadow-lg flex flex-col"
+          >
+            <div class="h-40 relative">
+              <img
+                src="https://i.pinimg.com/1200x/f2/db/54/f2db54e812a22be536b95b8a2e6ab57a.jpg"
+                alt="Chat App Project"
+                class="project-img w-full h-full object-cover"
+              />
+              <div class="img-overlay">
+                <span class="img-overlay-text">Chat App</span>
+              </div>
+            </div>
+            <div class="p-4 flex-grow flex flex-col">
+              <h3 class="text-lg font-bold text-white">
+                Full-Stack Real-Time Chat App
+              </h3>
+              <p class="text-gray-400 text-sm mt-2 flex-grow">
+                A feature-rich chat platform with real-time messaging, file
+                sharing, and JWT authentication.
+              </p>
+              <a
+                href="https://github.com/GulnazAhmad/ChatApplication"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-red-500 hover:text-red-400 font-semibold inline-flex items-center mt-4"
+                >View Project
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-neutral-800 rounded-lg shadow-lg flex flex-col"
+          >
+            <div class="h-40 relative">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                alt="Accident Prediction Project"
+                class="project-img w-full h-full object-cover"
+              />
+              <div class="img-overlay">
+                <span class="img-overlay-text">ML Prediction</span>
+              </div>
+            </div>
+            <div class="p-4 flex-grow flex flex-col">
+              <h3 class="text-lg font-bold text-white">
+                Accident Severity Prediction
+              </h3>
+              <p class="text-gray-400 text-sm mt-2 flex-grow">
+                A machine learning model to predict accident severity based on
+                weather and geographic data.
+              </p>
+              <a
+                href="https://github.com/GulnazAhmad/Accident-Severity-Prediction-Model-Using-Weather-and-Geolocation-Data"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-red-500 hover:text-red-400 font-semibold inline-flex items-center mt-4"
+                >View Project
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div
+            class="project-card bg-neutral-800 rounded-lg shadow-lg flex flex-col"
+          >
+            <div class="h-40 relative">
+              <img
+                src="https://images.unsplash.com/photo-1585241936939-be4099591252?q=80&w=1932&auto=format&fit=crop"
+                alt="Azure Deployment Project"
+                class="project-img w-full h-full object-cover"
+              />
+              <div class="img-overlay">
+                <span class="img-overlay-text">Cloud Deployment</span>
+              </div>
+            </div>
+            <div class="p-4 flex-grow flex flex-col">
+              <h3 class="text-lg font-bold text-white">
+                Cloud Deployment with Azure
+              </h3>
+              <p class="text-gray-400 text-sm mt-2 flex-grow">
+                Deployed a full-stack Flask app using Azure App Services,
+                Mobaxterm, and the Azure Portal.
+              </p>
+              <a
+                href="https://github.com/GulnazAhmad/Azure-Cloud"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-red-500 hover:text-red-400 font-semibold inline-flex items-center mt-4"
+                >View Project
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Project 6 -->
+          <div
+            class="project-card bg-neutral-800 rounded-lg shadow-lg flex flex-col"
+          >
+            <div class="h-40 relative">
+              <img
+                src="https://i.pinimg.com/736x/e6/95/6c/e6956c43c6a7eea3a092e2f1311ddafe.jpg"
+                alt="Campus Trade Project"
+                class="project-img w-full h-full object-cover"
+              />
+              <div class="img-overlay">
+                <span class="img-overlay-text">Campus Trade</span>
+              </div>
+            </div>
+            <div class="p-4 flex-grow flex flex-col">
+              <h3 class="text-lg font-bold text-white">
+                Campus Trade Platform
+              </h3>
+              <p class="text-gray-400 text-sm mt-2 flex-grow">
+                A platform for students to post items for rent, allowing others
+                on campus to connect with the owner and rent items easily.
+              </p>
+              <a
+                href="https://github.com/GulnazAhmad/campus-trade-platform"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-red-500 hover:text-red-400 font-semibold inline-flex items-center mt-4"
+                >View Project
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div
+            class="project-card bg-neutral-800 rounded-lg shadow-lg flex flex-col"
+          >
+            <div class="h-40 relative">
+              <img
+                src="https://i.pinimg.com/736x/41/3f/61/413f612d2cd5ad84229e48b10dca6e6e.jpg"
+                alt="To Do List Project"
+                class="project-img w-full h-full object-cover"
+              />
+              <div class="img-overlay">
+                <span class="img-overlay-text">To-Do List</span>
+              </div>
+            </div>
+            <div class="p-4 flex-grow flex flex-col">
+              <h3 class="text-lg font-bold text-white">
+                Fully Deployed To-Do List
+              </h3>
+              <p class="text-gray-400 text-sm mt-2 flex-grow">
+                A To-Do list application with full CRUD operations, user
+                authentication, and an appealing, intuitive user interface.
+              </p>
+              <a
+                href="https://github.com/GulnazAhmad/todo-list-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-red-500 hover:text-red-400 font-semibold inline-flex items-center mt-4"
+                >View Project
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="py-20 section">
+        <h2
+          class="text-4xl font-bebas tracking-wider text-white mb-12 text-center"
+        >
+          My Arsenal
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Languages</h3>
+            <p class="text-gray-400">C, Python, Java</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Cloud</h3>
+            <p class="text-gray-400">Microsoft Azure</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Data</h3>
+            <p class="text-gray-400">SQL, Pandas</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Web Dev</h3>
+            <p class="text-gray-400">
+              HTML, CSS, JS, React, Node.js, Express, MongoDB, Tailwind CSS
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="py-20 section">
+        <h2 class="text-4xl font-bebas tracking-wider text-white mb-12">
+          My Journey
+        </h2>
+        <div class="relative border-l-2 border-neutral-700 pl-10">
+          <!-- MERN Stack Intern -->
+          <div class="mb-10">
+            <div
+              class="absolute w-4 h-4 bg-red-600 rounded-full -left-2 mt-1.5"
+            ></div>
+            <p class="text-sm text-gray-500">June 2025 - July 2025</p>
+            <h3 class="text-xl font-bold text-white">MERN Stack Intern</h3>
+            <p class="text-md text-gray-400">CodeBeat</p>
+          </div>
+          <!-- Cloud Learner -->
+          <div class="mb-10">
+            <div
+              class="absolute w-4 h-4 bg-red-600 rounded-full -left-2 mt-1.5"
+            ></div>
+            <p class="text-sm text-gray-500">July 2024 - Aug 2024</p>
+            <h3 class="text-xl font-bold text-white">Cloud Learner</h3>
+            <p class="text-md text-gray-400">Ingenious-Tech</p>
+          </div>
+          <!-- Front-end Developer -->
+          <div class="mb-10">
+            <div
+              class="absolute w-4 h-4 bg-red-600 rounded-full -left-2 mt-1.5"
+            ></div>
+            <p class="text-sm text-gray-500">Aug 2024 - Sep 2024</p>
+            <h3 class="text-xl font-bold text-white">Front-end Developer</h3>
+            <p class="text-md text-gray-400">Oasis Byte</p>
+          </div>
+          <!-- Advanced Java and SQL Intern -->
+          <div>
+            <div
+              class="absolute w-4 h-4 bg-red-600 rounded-full -left-2 mt-1.5"
+            ></div>
+            <p class="text-sm text-gray-500">Aug 2023 - Sep 2023</p>
+            <h3 class="text-xl font-bold text-white">
+              Advanced Java and SQL Intern
+            </h3>
+            <p class="text-md text-gray-400">Silan Software</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Certifications -->
+      <section id="education" class="py-20 section">
+        <h2
+          class="text-4xl font-bebas tracking-wider text-white mb-12 text-center"
+        >
+          Education & Certs
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Education -->
+          <div class="bg-neutral-800 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-white mb-4">Education</h3>
+            <h4 class="text-lg font-bold text-white">
+              B.Tech in Computer Science
+            </h4>
+            <p class="text-gray-400">Silicon University, Bhubaneswar</p>
+            <p class="text-gray-500 text-sm mb-4">Expected 2026 | CGPA: 8.85</p>
+            <hr class="border-neutral-700 my-4" />
+            <h4 class="text-lg font-bold text-white mt-4">
+              CBSE (Class 10 & 12)
+            </h4>
+            <p class="text-gray-400">DAV Public School, Bistupur</p>
+            <p class="text-gray-500 text-sm">
+              Class 12: 85.8% | Class 10: 93.8%
+            </p>
+          </div>
+          <!-- Certifications -->
+          <div class="bg-neutral-800 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-white mb-4">Certifications</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li>NPTEL: Joy of Computing Using Python</li>
+              <li>Udemy: MERN Stack Web Development</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 section text-center">
+        <h2 class="text-4xl font-bebas tracking-wider text-white mb-4">
+          Ready to Collaborate?
+        </h2>
+        <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+          I'm currently looking for new opportunities. Whether you have a
+          question or just want to say hi, feel free to reach out.
+        </p>
+        <a
+          href="mailto:gulnazahmad86@gmail.com"
+          class="bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-md transition-transform transform hover:scale-105 inline-block"
+        >
+          Say Hello
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-800 mt-20">
+      <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+        <div class="flex justify-center space-x-4 mb-4">
+          <a
+            href="https://www.linkedin.com/in/gulnaz-ahmad"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <i data-lucide="linkedin" class="w-6 h-6"></i>
+          </a>
+          <a
+            href="https://github.com/GulnazAhmad"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white transition-colors"
+          >
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </a>
+        </div>
+        <p class="font-bebas text-xl text-red-600">GULNAZ</p>
+        <p class="text-sm">&copy; 2025 Gulnaz Ahmad. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when a link is clicked
+      const mobileMenuLinks = mobileMenu.getElementsByTagName("a");
+      for (let link of mobileMenuLinks) {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      }
+    </script>
+  </body>
+</html>
